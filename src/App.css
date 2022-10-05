@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #f9b08a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +28,120 @@
   color: #61dafb;
 }
 
+.App-Title {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.App-Title div {
+  font-size: calc(60px + 2vmin);
+
+}
+
+.App-Title div img {
+  height: calc(60px + 2vmin);
+  vertical-align: middle;
+
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.Social-Buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Social-Buttons div {
+  padding: 5px;
+}
+
+.Social-Buttons div img {
+  height: 30px;
+}
+
+.App-Buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.App-Buttons div {
+  margin: 5px;
+}
+
+.myButton {
+
+  border-radius: 28px;
+
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-decoration: none;
+}
+
+.Stop {
+  background-color: #c74444;
+  border: 1px solid #ccadad;
+}
+
+.Go {
+  background-color: #44c767;
+  border: 1px solid #ccadad;
+}
+
+.Pause {
+  background-color: #e68c1c;
+  border: 1px solid #ccadad;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.myButton:disabled {
+  background-color: #777777;
+  color: #9a9a9e;
+  border: 1px solid #777777;
+}
+
+.disableSettings {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.Control-Panel {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #7e8592;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 0px 10px 10px 10px;
+}
+
+.Timer-Controls {
+  display: inline-block;
+  margin: 10px;
+}
+
+.Timer-Label {
+  font-size: calc(2px + 2vmin);
 }
