@@ -131,11 +131,16 @@
   border: 1px solid #7e8592;
   border-radius: 10px;
   font-size: 12px;
-  text-align: left;
   margin-bottom: 20px;
   margin-top: 20px;
   padding: 0px 10px 10px 10px;
 }
+
+.disableSettings {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
 
 .Timer-Controls {
   display: inline-block;
