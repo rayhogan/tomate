@@ -16,7 +16,8 @@ class App extends React.Component {
       working: false,
       break: false,
       workTime: 15,
-      breakTime: 5
+      breakTime: 5,
+      backgroundColor: '#f9b08a',
     }
 
     this.startTimer = this.startTimer.bind(this);
@@ -34,13 +35,15 @@ class App extends React.Component {
       if (this.state.paused) {
         this.setState({
           running: true,
-          paused: false
+          paused: false,
+          backgroundColor: '#f9b08a',
         })
       }
       else {
         this.setState({
           running: true,
-          workInterval: setInterval(this.countDown, 1000)
+          workInterval: setInterval(this.countDown, 1000),
+          backgroundColor: '#f9b08a',
         })
       }
     }
@@ -67,7 +70,8 @@ class App extends React.Component {
   breakCountDown(e) {
     if (this.state.breakTimer > 0 && this.state.running) {
       this.setState({
-        breakTimer: this.state.breakTimer - 1
+        breakTimer: this.state.breakTimer - 1,
+        backgroundColor: '#86f490',
       })
     }
     else {
@@ -77,6 +81,7 @@ class App extends React.Component {
           break: false,
           workInterval: setInterval(this.countDown, 1000),
           breakTimer: this.state.breakTime * 60,
+          backgroundColor: '#86f490',
         })
       }
     }
@@ -89,14 +94,15 @@ class App extends React.Component {
       running: false,
       paused: false,
       workTimer: this.state.workTime * 60,
-      breakTimer: this.state.breakTime * 60
+      breakTimer: this.state.breakTime * 60,
+      backgroundColor: '#f9b08a',
     })
   }
 
   pauseTimer(e) {
     this.setState({
       running: false,
-      paused: true
+      paused: true,
     })
   }
 
@@ -118,7 +124,7 @@ class App extends React.Component {
     var settingClassName = "Control-Panel " + (this.state.running || this.state.paused ? "disableSettings" : null);
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header" style={{backgroundColor: `${this.state.backgroundColor}`}}>
           <div className="App-Title">
             <div>T🍅️mate</div>
           </div>
