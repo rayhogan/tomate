@@ -125,7 +125,7 @@ class App extends React.Component {
     var settingClassName = "Control-Panel " + (this.state.running || this.state.paused ? "disableSettings" : null);
     return (
       <div className="App">
-        <header className="App-header">
+        <header className={'App-header' + (this.state.break ? " breakState" : "")}>
           <div className="App-Title">
             <div>T🍅️mate</div>
           </div>

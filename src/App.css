@@ -24,6 +24,10 @@
   color: white;
 }
 
+.breakState {
+    background-color: #a3be8c !important;
+}
+
 .App-link {
   color: #61dafb;
 }
