@@ -3,6 +3,7 @@ import './App.css';
 import twitter from './images/twitter.svg'
 import github from './images/github.svg'
 import linkedin from './images/linkedin.svg'
+import alarm from './sounds/alarm.mp3';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,6 +19,8 @@ class App extends React.Component {
       workTime: 15,
       breakTime: 5
     }
+
+    this.audio = new Audio(alarm);
 
     this.startTimer = this.startTimer.bind(this);
     this.countDown = this.countDown.bind(this);
@@ -47,6 +50,8 @@ class App extends React.Component {
   }
 
   countDown(e) {
+    this.state.workTimer === 5 && this.audio.play()
+
     if (this.state.workTimer > 0 && this.state.running) {
       this.setState({
         workTimer: this.state.workTimer - 1
@@ -65,6 +70,8 @@ class App extends React.Component {
   }
 
   breakCountDown(e) {
+    this.state.breakTimer === 5 && this.audio.play()
+    
     if (this.state.breakTimer > 0 && this.state.running) {
       this.setState({
         breakTimer: this.state.breakTimer - 1
