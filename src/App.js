@@ -159,8 +159,8 @@ class App extends React.Component {
               </select>
             </div>
           </div>
-          <div>
-            <div style={{display: !this.state.break ? 'block' : 'none'}}>Work Time</div>
+          <div style={{display: !this.state.break ? 'block' : 'none'}}>
+            <div>Work Time</div>
             <div>{Math.floor(this.state.workTimer / 60)} mins {this.state.workTimer % 60} secs</div>
           </div>
           <div style={{display: this.state.break ? 'block' : 'none'}}>
