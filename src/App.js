@@ -99,6 +99,7 @@ class App extends React.Component {
       workTimer: this.state.workTime * 60,
       breakTimer: this.state.breakTime * 60,
       backgroundColor: "#f9b08a",
+      break:false,
     })
   }
 
