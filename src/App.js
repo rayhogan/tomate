@@ -39,7 +39,6 @@ class App extends React.Component {
         this.setState({
           running: true,
           paused: false,
-          backgroundColor: "#f9b08a",
         })
       } else {
         this.setState({
@@ -85,7 +84,7 @@ class App extends React.Component {
           break: false,
           workInterval: setInterval(this.countDown, 1000),
           breakTimer: this.state.breakTime * 60,
-          backgroundColor: "#86f490",
+          backgroundColor: "#f9b08a",
         })
       }
     }
