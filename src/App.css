@@ -31,20 +31,24 @@
 .App-Title {
   display: flex;
   flex-direction: row;
+  margin: 0;
 
 }
 
 .App-Title div {
   font-size: calc(60px + 2vmin);
-
+  margin: 0;
 }
+
 
 .App-Title div img {
   height: calc(60px + 2vmin);
   vertical-align: middle;
 
 }
-
+.App-Title h1{
+  margin: 0;
+}
 
 @keyframes App-logo-spin {
   from {
