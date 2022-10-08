@@ -5,6 +5,8 @@ import github from "./images/github.svg"
 import linkedin from "./images/linkedin.svg"
 import alarm from "./sounds/alarm.mp3"
 
+import { Fireworks } from "@fireworks-js/react"
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -21,6 +23,7 @@ class App extends React.Component {
       backgroundColor: "#f9b08a",
     }
 
+    this.myref = React.createRef()
     this.audio = new Audio(alarm)
 
     this.startTimer = this.startTimer.bind(this)
@@ -127,6 +130,7 @@ class App extends React.Component {
   render() {
     var settingClassName = "Control-Panel " + (this.state.running || this.state.paused ? "disableSettings" : null)
     return (
+      <>
       <div className="App">
         <header className="App-header" style={{ backgroundColor: `${this.state.backgroundColor}` }}>
           <div className="App-Title">
@@ -210,6 +214,20 @@ class App extends React.Component {
           </div>
         </header>
       </div>
+      {this.state.break && <Fireworks
+          ref={this.myref}
+          options={{ acceleration: 0.99 }}
+          style={{
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
+            background: 'transparent',
+            pointerEvents: 'none'
+          }}
+        />}
+    </>
     )
   }
 }
