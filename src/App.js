@@ -102,7 +102,7 @@ class App extends React.Component {
       workTimer: this.state.workTime * 60,
       breakTimer: this.state.breakTime * 60,
       backgroundColor: "#f9b08a",
-      break:false,
+      break: false,
     })
   }
 
@@ -131,90 +131,90 @@ class App extends React.Component {
     var settingClassName = "Control-Panel " + (this.state.running || this.state.paused ? "disableSettings" : null)
     return (
       <>
-      <div className="App">
-        <header className="App-header" style={{ backgroundColor: `${this.state.backgroundColor}` }}>
-          <div className="App-Title">
-            <h1 style={{ fontSize: "calc(60px + 2vmin)", fontWeight: "400" }}>T🍅️mate</h1>
-          </div>
-          <div className={settingClassName}>
-            <div className="Timer-Controls">
-              <div className="Timer-Label">Work Time</div>
+        <div className="App">
+          <header className="App-header" style={{ backgroundColor: `${this.state.backgroundColor}` }}>
+            <div className="App-Title">
+              <h1 style={{ fontSize: "calc(60px + 2vmin)", fontWeight: "400" }}>T🍅️mate</h1>
+            </div>
+            <div className={settingClassName}>
+              <div className="Timer-Controls">
+                <div className="Timer-Label">Work Time</div>
 
-              <select name="work-time" id="work-time" onChange={this.selectWorkTime}>
-                <option value="15">15 mins</option>
-                <option value="20">20 mins</option>
-                <option value="25">25 mins</option>
-                <option value="30">30 mins</option>
-                <option value="35">35 mins</option>
-                <option value="40">40 mins</option>
-                <option value="45">45 mins</option>
-                <option value="50">50 mins</option>
-                <option value="55">55 mins</option>
-                <option value="60">60 mins</option>
-              </select>
-            </div>
-            <div className="Timer-Controls">
-              <div className="Timer-Label">Break Time</div>
+                <select name="work-time" id="work-time" onChange={this.selectWorkTime}>
+                  <option value="15">15 mins</option>
+                  <option value="20">20 mins</option>
+                  <option value="25">25 mins</option>
+                  <option value="30">30 mins</option>
+                  <option value="35">35 mins</option>
+                  <option value="40">40 mins</option>
+                  <option value="45">45 mins</option>
+                  <option value="50">50 mins</option>
+                  <option value="55">55 mins</option>
+                  <option value="60">60 mins</option>
+                </select>
+              </div>
+              <div className="Timer-Controls">
+                <div className="Timer-Label">Break Time</div>
 
-              <select name="work-time" id="work-time" onChange={this.selectBreakTime}>
-                <option value="5">5 mins</option>
-                <option value="10">10 mins</option>
-                <option value="15">15 mins</option>
-                <option value="20">20 mins</option>
-                <option value="25">25 mins</option>
-                <option value="30">30 mins</option>
-              </select>
+                <select name="work-time" id="work-time" onChange={this.selectBreakTime}>
+                  <option value="5">5 mins</option>
+                  <option value="10">10 mins</option>
+                  <option value="15">15 mins</option>
+                  <option value="20">20 mins</option>
+                  <option value="25">25 mins</option>
+                  <option value="30">30 mins</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div style={{ display: !this.state.break ? "block" : "none" }}>
-            <div>Work Time</div>
-            <div>
-              {Math.floor(this.state.workTimer / 60)} mins {this.state.workTimer % 60} secs
+            <div style={{ display: !this.state.break ? "block" : "none" }}>
+              <div>Work Time</div>
+              <div>
+                {Math.floor(this.state.workTimer / 60)} mins {this.state.workTimer % 60} secs
+              </div>
             </div>
-          </div>
-          <div style={{ display: this.state.break ? "block" : "none" }}>
-            <div>Break Time</div>
-            <div>
-              {Math.floor(this.state.breakTimer / 60)} mins {this.state.breakTimer % 60} secs
+            <div style={{ display: this.state.break ? "block" : "none" }}>
+              <div>Break Time</div>
+              <div>
+                {Math.floor(this.state.breakTimer / 60)} mins {this.state.breakTimer % 60} secs
+              </div>
             </div>
-          </div>
-          <div className="App-Buttons">
-            <div>
-              <button className="myButton Stop" type="button" onClick={this.resetSettings} disabled={!this.state.running && !this.state.paused}>
-                Reset
-              </button>
+            <div className="App-Buttons">
+              <div>
+                <button className="myButton Stop" type="button" onClick={this.resetSettings} disabled={!this.state.running && !this.state.paused}>
+                  Reset
+                </button>
+              </div>
+              <div>
+                <button className="myButton Pause" type="button" onClick={this.pauseTimer} disabled={!this.state.running}>
+                  Pause
+                </button>
+              </div>
+              <div>
+                <button className="myButton Go" type="button" onClick={this.startTimer} disabled={this.state.running}>
+                  {this.state.paused || this.state.running ? "Continue" : "Start"}
+                </button>
+              </div>
             </div>
-            <div>
-              <button className="myButton Pause" type="button" onClick={this.pauseTimer} disabled={!this.state.running}>
-                Pause
-              </button>
+            <div className="Social-Buttons">
+              <div>
+                <a href="https://www.github.com/rayhogan">
+                  <img alt="Github" src={github} />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/ray-hogan/">
+                  <img alt="LinkedIn" src={linkedin} />
+                </a>
+              </div>
+              <div>
+                <a href="https://twitter.com/rayhogan">
+                  <img alt="Twitter" src={twitter} />
+                </a>
+              </div>
             </div>
-            <div>
-              <button className="myButton Go" type="button" onClick={this.startTimer} disabled={this.state.running}>
-                Start
-              </button>
-            </div>
-          </div>
-          <div className="Social-Buttons">
-            <div>
-              <a href="https://www.github.com/rayhogan">
-                <img alt="Github" src={github} />
-              </a>
-            </div>
-            <div>
-              <a href="https://www.linkedin.com/in/ray-hogan/">
-                <img alt="LinkedIn" src={linkedin} />
-              </a>
-            </div>
-            <div>
-              <a href="https://twitter.com/rayhogan">
-                <img alt="Twitter" src={twitter} />
-              </a>
-            </div>
-          </div>
-        </header>
-      </div>
-      {this.state.break && <Fireworks
+          </header>
+        </div>
+        {this.state.break && <Fireworks
           ref={this.myref}
           options={{ acceleration: 0.99 }}
           style={{
@@ -227,7 +227,7 @@ class App extends React.Component {
             pointerEvents: 'none'
           }}
         />}
-    </>
+      </>
     )
   }
 }
