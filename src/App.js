@@ -127,6 +127,27 @@ class App extends React.Component {
     })
   }
 
+  renderControls() {
+    return (<>
+      <div className="App-Buttons">
+        <div>
+          <button className="myButton Stop" type="button" onClick={this.resetSettings} disabled={!this.state.running && !this.state.paused}>
+            Reset
+          </button>
+        </div>
+        {this.state.running ?
+          <div>
+            <button className="myButton Pause" type="button" onClick={this.pauseTimer} disabled={!this.state.running}>
+              Pause
+            </button>
+          </div> :
+          <div>
+            <button className="myButton Go" type="button" onClick={this.startTimer} disabled={this.state.running}>
+              {this.state.paused ? "Continue" : "Start"}
+            </button>
+          </div>}</div></>)
+  }
+
   render() {
     var settingClassName = "Control-Panel " + (this.state.running || this.state.paused ? "disableSettings" : null)
     return (
@@ -178,23 +199,7 @@ class App extends React.Component {
                 {Math.floor(this.state.breakTimer / 60)} mins {this.state.breakTimer % 60} secs
               </div>
             </div>
-            <div className="App-Buttons">
-              <div>
-                <button className="myButton Stop" type="button" onClick={this.resetSettings} disabled={!this.state.running && !this.state.paused}>
-                  Reset
-                </button>
-              </div>
-              <div>
-                <button className="myButton Pause" type="button" onClick={this.pauseTimer} disabled={!this.state.running}>
-                  Pause
-                </button>
-              </div>
-              <div>
-                <button className="myButton Go" type="button" onClick={this.startTimer} disabled={this.state.running}>
-                  {this.state.paused || this.state.running ? "Continue" : "Start"}
-                </button>
-              </div>
-            </div>
+            {this.renderControls()}
             <div className="Social-Buttons">
               <div>
                 <a href="https://www.github.com/rayhogan">
