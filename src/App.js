@@ -128,22 +128,24 @@ class App extends React.Component {
   }
 
   renderControls() {
-    return (<>  <div>
-      <button className="myButton Stop" type="button" onClick={this.resetSettings} disabled={!this.state.running && !this.state.paused}>
-        Reset
-      </button>
-    </div>
-      {this.state.running ?
+    return (<>
+      <div className="App-Buttons">
         <div>
-          <button className="myButton Pause" type="button" onClick={this.pauseTimer} disabled={!this.state.running}>
-            Pause
+          <button className="myButton Stop" type="button" onClick={this.resetSettings} disabled={!this.state.running && !this.state.paused}>
+            Reset
           </button>
-        </div> :
-        <div>
-          <button className="myButton Go" type="button" onClick={this.startTimer} disabled={this.state.running}>
-            {this.state.paused ? "Continue" : "Start"}
-          </button>
-        </div>}</>)
+        </div>
+        {this.state.running ?
+          <div>
+            <button className="myButton Pause" type="button" onClick={this.pauseTimer} disabled={!this.state.running}>
+              Pause
+            </button>
+          </div> :
+          <div>
+            <button className="myButton Go" type="button" onClick={this.startTimer} disabled={this.state.running}>
+              {this.state.paused ? "Continue" : "Start"}
+            </button>
+          </div>}</div></>)
   }
 
   render() {
@@ -153,7 +155,7 @@ class App extends React.Component {
         <div className="App">
           <header className="App-header" style={{ backgroundColor: `${this.state.backgroundColor}` }}>
             <div className="App-Title">
-              <h1 style={{ fontSize: "calc(60px + 2vmin)", fontWeight: "400" }}>T🍅️mato</h1>
+              <h1 style={{ fontSize: "calc(60px + 2vmin)", fontWeight: "400" }}>T🍅️mate</h1>
             </div>
             <div className={settingClassName}>
               <div className="Timer-Controls">
@@ -197,10 +199,7 @@ class App extends React.Component {
                 {Math.floor(this.state.breakTimer / 60)} mins {this.state.breakTimer % 60} secs
               </div>
             </div>
-            <div className="App-Buttons">
-              {this.renderControls()}
-
-            </div>
+            {this.renderControls()}
             <div className="Social-Buttons">
               <div>
                 <a href="https://www.github.com/rayhogan">
