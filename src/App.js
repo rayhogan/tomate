@@ -128,7 +128,6 @@ class App extends React.Component {
   }
 
   renderControls() {
-    console.log("Something")
     return (<>  <div>
       <button className="myButton Stop" type="button" onClick={this.resetSettings} disabled={!this.state.running && !this.state.paused}>
         Reset
