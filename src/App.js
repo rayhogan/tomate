@@ -161,7 +161,7 @@ class App extends React.Component {
               <div className="Timer-Controls">
                 <div className="Timer-Label">Work Time</div>
 
-                <select name="work-time" id="work-time" onChange={this.selectWorkTime}>
+                <select name="work-time" id="work-time" onChange={this.selectWorkTime} className='timer-input'>
                   <option value="15">15 mins</option>
                   <option value="20">20 mins</option>
                   <option value="25">25 mins</option>
@@ -177,7 +177,7 @@ class App extends React.Component {
               <div className="Timer-Controls">
                 <div className="Timer-Label">Break Time</div>
 
-                <select name="work-time" id="work-time" onChange={this.selectBreakTime}>
+                <select name="work-time" id="work-time" onChange={this.selectBreakTime} className='timer-input'>
                   <option value="5">5 mins</option>
                   <option value="10">10 mins</option>
                   <option value="15">15 mins</option>
