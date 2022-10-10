@@ -150,3 +150,11 @@
 .Timer-Label {
   font-size: calc(2px + 2vmin);
 }
+
+.timer-input {
+    font-size: calc(2px + 2vmin);
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #7e8592;;
+    border-radius: 10px;
+}
