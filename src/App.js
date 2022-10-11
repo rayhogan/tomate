@@ -179,7 +179,7 @@ class App extends React.Component {
             style={{ backgroundColor: `${this.state.backgroundColor}` }}
           >
             <div className="App-Title">
-              <h1 style={{ fontSize: "calc(60px + 2vmin)", fontWeight: "400" }}>
+              <h1 style={{ fontSize: "calc(60px + 2vmin)", fontWeight: "400",margin:"0px"}}>
                 T🍅️mate
               </h1>
             </div>
