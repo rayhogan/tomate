@@ -10,14 +10,14 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      workTimer: 900,
-      breakTimer: 300,
+      workTimer: 30,
+      breakTimer: 30,
       running: false,
       paused: false,
       working: false,
       break: false,
-      workTime: 15,
-      breakTime: 5,
+      workTime: .5,
+      breakTime: .5,
       backgroundColor: "#f9b08a",
     };
 
