@@ -152,9 +152,35 @@
 }
 
 .timer-input {
-    font-size: calc(2px + 2vmin);
-    padding: 8px;
-    margin-top: 8px;
-    border: 1px solid #7e8592;;
-    border-radius: 10px;
+  font-size: calc(2px + 2vmin);
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #7e8592;
+  ;
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  
+  .Timer-Label {
+    font-size: calc(12px + 3vmin);
+  }
+
+  .timer-input {
+    font-size: calc(7px + 2vmin);
+    padding: 8px 12px;
+    margin-top: 10px;
+  }
+
+  .timeUpdate {
+    font-size: 20px;
+  }
+
+  .myButton {
+    padding: 13px 26px;
+  }
+
+  .Social-Buttons div img {
+    height: 31px;
+  }
 }

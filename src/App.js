@@ -213,7 +213,7 @@ class App extends React.Component {
                 </select>
               </div>
             </div>
-            <div style={{ display: !this.state.break ? "block" : "none" }}>
+            <div className="timeUpdate" style={{ display: !this.state.break ? "block" : "none" }}>
               <div>Work Time</div>
               <div>
                 {Math.floor(this.state.workTimer / 60)} mins{" "}
